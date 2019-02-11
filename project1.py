@@ -43,18 +43,18 @@ def top2PerTrader(data):
 
 #print(top2PerTrader(getData(path)))
 
-"""
-Check quarter per product-----------------------------------------------------------------------------
-"""
+
 def checkQuarter(dataSet):
-    customer = ['00008417']#customer list
+    """
+    Check quarter per product
+    """
+    customer = top2PerTrader(getData(path))#customer list
     listOK = []
     counter1 = list()
     for i in customer:
         counter1.append(i)
         counter_1 = len(counter1)
-        all_1 = len(customer)
-        print(counter_1,all_1)
+        all_1 = len(customer)        
         data = dataSet[dataSet.idCus == i]
         idProduct = data.loc[:,'sku'].tolist() #product list 
         counter2 = list()
@@ -63,6 +63,7 @@ def checkQuarter(dataSet):
             counter_2 = len(counter2)
             all_2 = len(idProduct)
             print(counter_2,all_2)
+            print(counter_1,all_1)
             t2 = data[data.sku == i]
             t2.loc[:,'date'] = pd.to_datetime(t2.date)
             q = t2.loc[:,'date'].dt.quarter.drop_duplicates()
@@ -76,4 +77,4 @@ def checkQuarter(dataSet):
     a.to_excel('listOK.xlsx')
     #b.to_excel('list2.xlsx')
     return print("list_saved")
-checkQuarter(dataSet)
+checkQuarter(data())
