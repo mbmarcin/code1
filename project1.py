@@ -86,7 +86,7 @@ checkQuarter(data())
 
 """
 # regularity per prduct
-customer = ['00008417']   #,'00053875']#customer list'00053875'
+customer = #customer list
 maxMin = {'date':('2011-01-01','2011-12-31')}
 frameMaxMin = pd.DataFrame(maxMin)
 frameMaxMin.loc[:,'date'] = pd.to_datetime(frameMaxMin.date)
@@ -94,7 +94,7 @@ list_dict = list()
 
 for i in customer:
     data = dataSet[dataSet.idCus == i] # Data set for loop
-    idProduct = ['CPINLP4P30V','OBMICAO10S2','OOMICSW7H6C']#data['sku'].tolist() #product list
+    idProduct = #data['sku'].tolist() #product list
     setdata = {
         'idCus':[i]*len(idProduct),
         'sku':[],
