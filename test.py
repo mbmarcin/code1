@@ -41,3 +41,8 @@ def data(data):
     return dataSet
 
 print(data(getData(path)))    
+
+
+
+
+
