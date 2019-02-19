@@ -20,29 +20,22 @@ def func():
 func()
 """
 
-import pandas as pd
 
-path = 'C://Users//m1//Desktop//jupyterNotebook//data.txt'
+import os, glob
 
-"""
-data from file---------------------------------------------------------------------------------------
-"""
+def pathFile(FileName):
+    """
+    return path file from current dir
+    """
+    cat = os.getcwd()
+    path = os.path.join(cat,FileName)
+    return glob.glob(path)
 
-def getData(pathFile):
-    data = pd.read_csv(pathFile, sep=';', low_memory=False, dtype={"idCus":'str'})
-    return data
-
-"""
-data set after processing
-"""
-
-def data(data):
-    dataSet = data.loc[:,['idCus','sku','date']].drop_duplicates()
-    return dataSet
-
-print(data(getData(path)))    
+print(pathFile("listOK.txt"))
 
 
 
+
+#print(os.chdir("/m1/Desktop/jupyterNotebook"))
 
 
