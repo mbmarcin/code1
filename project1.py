@@ -160,4 +160,18 @@ def RofP(data1,dataSet):
     ToFile.to_csv('RofP.txt',sep=';',index=False, header=True)
     print("listSaved")
 
-RofP(getData(pathFile("listOK.txt")),data())
+
+def main():
+    try:
+        checkQuarter(data())
+        print("I check quarter")
+        RofP(getData(pathFile("listOK.txt")),data())
+    except:
+        print("Something went wrong")
+    print("Check result")
+
+
+
+#RofP(getData(pathFile("listOK.txt")),data())
+    
+main()
