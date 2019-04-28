@@ -1,16 +1,15 @@
 
-import os
-import pprint
-print(os.environ['PATH'])
-pprint.pprint(os.environ['PATH'].split(';'))
-
-
-
 
 import pandas as pd
-import numpy as np
 
-data = {'col_1': [3, 2, 1, 0], 'col_2': ['a', 'b', 'c', 'd']}
-df = pd.DataFrame.from_dict(data)
-print(df)
+pathFile = "/media/marcin/win_ssd/Users/m1/Desktop/jupyterNotebook/data.txt"
+#/media/marcin/dane_ssd/python/forLinux/ratings.csv
+#/media/marcin/win_ssd/Users/m1/Desktop/jupyterNotebookdata.txt
 
+
+dta = pd.read_csv(pathFile, sep=';',low_memory=False, dtype={"idCus":'str'})
+frame = dta.loc[:,['idCus','sku']].drop_duplicates()
+#usecols=['date','idCus']
+
+
+print(frame.head())
