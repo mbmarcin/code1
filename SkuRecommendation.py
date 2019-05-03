@@ -3,14 +3,10 @@
 import pandas as pd
 
 pathFile = "/media/marcin/win_ssd/Users/m1/Desktop/jupyterNotebook/data.txt"
-#/media/marcin/dane_ssd/python/forLinux/ratings.csv
-#/media/marcin/win_ssd/Users/m1/Desktop/jupyterNotebookdata.txt
 
 
 dta = pd.read_csv(pathFile, sep=';',low_memory=False, dtype={"idCus":'str'})
 frame = dta.loc[:,['idCus','sku']].drop_duplicates()
-#usecols=['date','idCus']
-#frame['sku'].value_counts().head().to_csv('test.txt')
 
 
 itemList = frame["sku"].unique().tolist() # upperCASE
@@ -18,7 +14,6 @@ all_userCount = len(frame["idCus"].unique().tolist())
 mainFrame = pd.DataFrame(columns=('sku1','sku2','score'))
 
 row = 0
-
 
 for sku1 in range(len(itemList)):
     sku1ItemUser = frame[frame.sku == itemList[sku1]]["idCus"].tolist()
@@ -40,7 +35,7 @@ mainFrame.head()
 
 checkItem = 'OOMICSW7H6C'
 
-recoList = mainFrame[mainFrame.item1 == checkItem][["sku2","score"]].sort_values("score", ascending=False)
+recoList = mainFrame[mainFrame.item1 == checkItem][["sku2", "score"]].sort_values("score", ascending=False)
 
 
 print("Recommendations for item 5001\n", recoList)
