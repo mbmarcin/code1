@@ -40,7 +40,7 @@ mainFrame.head()
 
 checkItem = 'OOMICSW7H6C'
 
-recoList = mainFrame[mainFrame.item1==checkItem][["sku2","score"]].sort_values("score", ascending=False)
+recoList = mainFrame[mainFrame.item1 == checkItem][["sku2","score"]].sort_values("score", ascending=False)
 
 
 print("Recommendations for item 5001\n", recoList)
