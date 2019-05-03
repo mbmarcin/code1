@@ -18,25 +18,12 @@ def func():
             print("end")
     
 func()
+
+
+
+
 """
 
+x = [12,4,56,6,87,998,33,4565,67,89]
 
-import os, glob
-
-def pathFile(FileName):
-    """
-    return path file from current dir
-    """
-    cat = os.getcwd()
-    path = os.path.join(cat,FileName)
-    return glob.glob(path)
-
-print(pathFile("listOK.txt"))
-
-#bla bla
-
-
-
-#print(os.chdir("/m1/Desktop/jupyterNotebook"))
-
-
+print(x[1])
