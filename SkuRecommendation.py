@@ -11,7 +11,6 @@ itemList = frame["sku"].unique().tolist() # upperCASE
 all_userCount = len(frame["idCus"].unique().tolist())
 mainFrame = pd.DataFrame(columns=('sku1' ,'sku2' ,'score'))
 
-
 row = 0
 for sku1 in range(len(itemList)):
     sku1ItemUser = frame[frame.sku == itemList[sku1]]["idCus"].tolist()
