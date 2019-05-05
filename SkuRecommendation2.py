@@ -23,7 +23,7 @@ mainFrame = pd.DataFrame(columns=('sku1', 'sku2', 'users', 'score'))
 
 row = 0
 
-skuList = ['OBMICOO10B1'] # input list skus
+skuList = ['DHSGTASDC07'] # input list skus
 list1 = list()
 list2 = list()
 for sku1 in skuList:
@@ -49,7 +49,7 @@ for sku1 in skuList:
                 continue
 
 #print(mainFrame.head())
-checkItem = 'OBMICOO10B1'
+checkItem = 'DHSGTASDC07'
 recoList = mainFrame[mainFrame.sku1 == checkItem][["sku1", "sku2", 'users', "score"]].sort_values("score", ascending=False)
 
 print('Recommendations', recoList)
